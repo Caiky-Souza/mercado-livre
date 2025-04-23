@@ -6,7 +6,11 @@
 
 
 body {
-    display:flex;
+    display:grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
     flex-direction: column;
     --bg-color: rgb(211, 206, 206);
     background-color: var(--bg-color);
@@ -20,6 +24,7 @@ header {
 }
 
 .heading {
+    grid-area: header;
     display:flex;
     justify-content: flex-start;
     align-items:center;
@@ -117,7 +122,7 @@ input {
 
 /* Styling the body */
 .bcontainer {
-    background-image: linear-gradient(url("https://http2.mlstatic.com/D_NQ_627045-MLA82787677787_022025-OO.webp"),var(--bg-color));
+    grid-area:main;
     position:relative;
     z-index:1;
     height:600px;
@@ -348,4 +353,10 @@ h5 {
 .hcontainer a:link, .hcontainer a:hover,.hcontainer a:visited {
     text-decoration: none;
     color:black;
+}
+.main {
+    grid-area: main;
+}
+.footer {
+    grid-area: footer;
 }
